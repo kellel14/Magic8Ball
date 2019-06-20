@@ -37,7 +37,7 @@ public class Main {
 
        //use do-while or while when loop prints once
         System.out.println("Hey You!\nAsk me a question.");
-        user.nextLine();
+        String answer = user.nextLine();
 
         int rand_reposnse = rand.nextInt(20);
 
@@ -54,22 +54,24 @@ public class Main {
 //        while(user.hasNext("y") || user.hasNext("n")){
         while(true) {
             System.out.println("Would you like to ask another question? (y/n)\n");
-            if (user.nextLine().equalsIgnoreCase("y")) {
+            answer = user.nextLine();
+            if (answer.equalsIgnoreCase("y")) {
                 System.out.println("Your question?");
                 user.nextLine();
                 System.out.println(response.get(rand_reposnse));
 //                continue;
+
+
             }
 //            System.out.println(response.get(rand_reposnse));
 
 
 
-            else if(user.nextLine().equalsIgnoreCase("n")){
+            else{
                 System.out.println("Thank you for playing!");
                 break;
             }
 
-            System.out.println("Would you like to continue? (y/n");
 
         }
 
